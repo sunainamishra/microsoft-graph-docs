@@ -1,6 +1,6 @@
 ---
 title: "workforceIntegration resource type"
-description: "An instance of a workforce integration with shifts."
+description: "An instance of a workforce integration with Shifts"
 localization_priority: Normal
 author: "akumar39"
 ms.prod: "microsoft-teams"
@@ -9,34 +9,32 @@ doc_type: "resourcePageType"
 
 # workforceIntegration resource type
 
-Namespace: microsoft.graph
-
 [!INCLUDE [beta-disclaimer](../../includes/beta-disclaimer.md)]
 
-An instance of a workforce integration with shifts.
+An instance of a workforce integration with Shifts.
 
 ## Methods
 
 | Method       | Return Type | Description |
 |:-------------|:------------|:------------|
-| [Get](../api/workforceintegration-get.md) | [workforceIntegration](workforceintegration.md) | Read the properties and relationships of a **workforceIntegration** object. |
-| [Update](../api/workforceintegration-update.md) | [workforceIntegration](workforceintegration.md) | Update a **workforceIntegration** object. |
-| [Delete](../api/workforceintegration-delete.md) | None | Delete a **workforceIntegration** object. |
+| [Get workforceIntegration](../api/workforceintegration-get.md) | [workforceIntegration](workforceintegration.md) | Read properties and relationships of workforceIntegration object. |
+| [Update](../api/workforceintegration-update.md) | [workforceIntegration](workforceintegration.md) | Update workforceIntegration object. |
+| [Delete](../api/workforceintegration-delete.md) | None | Delete workforceIntegration object. |
 
 ## Properties
 
 | Property     | Type        | Description |
 |:-------------|:------------|:------------|
-|apiVersion|Int32|API version for the call back URL. Start with 1.|
+|apiVersion|Int32|API version for the call back url. Start with 1.|
 |displayName|String|Name of the workforce integration.|
 |encryption|[workforceIntegrationEncryption](workforceintegrationencryption.md)|The workforce integration encryption resource.|
-|isActive|Boolean|Indicates whether this workforce integration is currently active and available.|
-|supports|string| Possible values are: `none`, `shift`, `swapRequest`, `openshift`, `openShiftRequest`, `userShiftPreferences`|
-|url|String| Workforce Integration URL for callbacks from the shift service.|
+|isActive|Boolean|If this workforce integration is currently active and available.|
+|supports|string| Possible values are: `none`, `shift`, `swapRequest`, `openshift`, `openShiftRequest`, `userShiftPreferences`, `timeoffReason`, `offerShiftRequest`, `timeoff`, `timeoffRequest`|
+|url|String| Workforce Integration url for callbacks from the Shift service.|
 
 ## Relationships
 
-None.
+None
 
 ## JSON representation
 

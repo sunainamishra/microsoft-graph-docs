@@ -1,7 +1,7 @@
 ---
 title: "Get schedule"
 description: "Retrieve the properties and relationships of a **schedule** object."
-author: "nkramer"
+author: "akumar39"
 localization_priority: Normal
 ms.prod: "microsoft-teams"
 doc_type: apiPageType
@@ -28,7 +28,7 @@ One of the following permissions is required to call this API. To learn more, in
 
 |Permission type      | Permissions (from least to most privileged)              |
 |:--------------------|:---------------------------------------------------------|
-|Delegated (work or school account) | Group.Read.All, Group.ReadWrite.All    |
+|Delegated (work or school account) | Group.Read.All, Group.ReadWrite.All,Schedule.Read.All, Schedule.ReadWrite.All |
 |Delegated (personal Microsoft account) | Not supported.    |
 |Application | Schedule.Read.All*, Schedule.ReadWrite.All* |
 

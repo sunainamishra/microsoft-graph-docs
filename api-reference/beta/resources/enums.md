@@ -146,6 +146,10 @@ Namespace: microsoft.graph
 |openShift
 |openShiftRequest
 |userShiftPreferences
+|timeoffReason
+|offerShiftRequest
+|timeoff
+|timeoffRequest
 
 ### timeZoneStandard values
 

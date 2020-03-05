@@ -1,15 +1,13 @@
 ---
 title: "List timesOff"
 description: "Get the list of timesOff in this schedule."
-author: "nkramer"
+author: "akumar39"
 localization_priority: Normal
 ms.prod: "microsoft-teams"
 doc_type: apiPageType
 ---
 
 # List timesOff
-
-Namespace: microsoft.graph
 
 [!INCLUDE [beta-disclaimer](../../includes/beta-disclaimer.md)]
 
@@ -21,9 +19,9 @@ One of the following permissions is required to call this API. To learn more, in
 
 |Permission type      | Permissions (from least to most privileged)              |
 |:--------------------|:---------------------------------------------------------|
-|Delegated (work or school account) | Group.Read.All, Group.ReadWrite.All    |
+|Delegated (work or school account) | Group.Read.All, Group.ReadWrite.All, Schedule.Read.All, Schedule.ReadWrite.All  |
 |Delegated (personal Microsoft account) | Not supported.    |
-|Application | Not supported. |
+|Application | Schedule.Read.All, Schedule.ReadWrite.All (currently in Private Preview) |
 
 > **Note**: This API supports admin permissions. Global admins can access groups that they are not a member of.
 
