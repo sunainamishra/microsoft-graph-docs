@@ -18,7 +18,7 @@ For details about known issues with Microsoft Graph APIs, see [Known issues](kno
 | **Change type** | **Version** | **Description**                          |
 | :-------------- | :---------- | :--------------------------------------- |
 | Addition | Beta | Introduced the UserShiftPreferences.Read.All and UserShiftPreferences.ReadWrite.All permissions for [shiftpreferences](/graph/api/resources/shiftpreferences?view=graph-rest-beta).
-| Addition | Beta | Added new enum values `timeoffReason`, `offerShiftRequest`, `timeoff`, `timeoffRequest` for [workforceIntegrationSupportedEntities] in [enums](api-reference\beta\resources\enums.md)
+| Addition | Beta | Added new enum values `timeoffReason`, `offerShiftRequest`, `timeoff`, `timeoffRequest` for [workforceIntegrationSupportedEntities].
 |Addition|beta|Add the [presence](/graph/api/resources/presence?view=graph-rest-beta) resource and associated methods, and introduced the Presence.Read and Presence.Read.All permissions.|
 
 ## February 2020
