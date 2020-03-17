@@ -33,7 +33,7 @@ GET /users/{id | userPrincipalName}/transitiveMemberOf
 
 ## Optional query parameters
 
-This method supports the [OData Query Parameters](https://developer.microsoft.com/graph/docs/concepts/query_parameters) to help customize the response including `$search`, `$count`, and `$filter`. You can use `$search` on **displayName** and **description** properties. When items are added or updated for this resource, they are specially indexed for use with the `$count` and `$search` query parameters. There can be a slight delay between when an item is added or updated and when it is available in the index.
+This method supports the [OData Query Parameters](https://developer.microsoft.com/graph/docs/concepts/query_parameters) to help customize the response including `$search`, `$count`, and `$filter`. OData cast is also enabled, for example, you can cast to get just the transitive membership in groups. You can use `$search` on the **displayName** property. When items are added or updated for this resource, they are specially indexed for use with the `$count` and `$search` query parameters. There can be a slight delay between when an item is added or updated and when it is available in the index.
 
 ## Request headers
 
@@ -103,52 +103,7 @@ Content-type: application/json
 }
 ```
 
-### Example 2: Get groups, directory roles, and administrative units that the user is a member of including a count of returned objects
-
-#### Request
-
-Here is an example of the request.
-
-<!-- {
-  "blockType": "request",
-  "name": "get_transitivememberof_count"
-}-->
-
-```msgraph-interactive
-GET https://graph.microsoft.com/beta/users/{id}/transitiveMemberOf?$count=true
-```
-
-#### Response
-
-The following is an example of the response.
->**Note:** The response object shown here might be shortened for readability. All the properties will be returned from an actual call.
-
-<!-- {
-  "blockType": "response",
-  "truncated": true,
-  "@odata.type": "microsoft.graph.directoryObject",
-  "isCollection": true
-} -->
-```http
-HTTP/1.1 200 OK
-Content-type: application/json
-
-{
-  "@odata.context":"https://graph.microsoft.com/beta/$metadata#directoryObjects",
-  "@odata.count":893,
-  "value": [
-    {
-      "@odata.type":"#microsoft.graph.group",
-      "displayName":"All_Contoso_Licensing",
-      "mailEnabled":true,
-      "mailNickname":"ContosoMailNickName",
-      "securityEnabled":true
-    }
-  ]
-}
-```
-
-### Example 3: Get only a count of transitive membership in groups, directory roles, and administrative units
+### Example 2: Get only a count of transitive membership in groups, directory roles, and administrative units
 
 #### Request
 
@@ -160,6 +115,7 @@ The following is an example of the request.
 }-->
 ```msgraph-interactive
 GET https://graph.microsoft.com/beta/users/{id}/transitiveMemberOf/$count
+ConsistencyLevel: eventual
 ```
 
 #### Response
@@ -180,7 +136,7 @@ Content-type: text/plain
 893
 
 
-### Example 4: Get only a count of transitive membership in groups
+### Example 3: Use OData cast to get only a count of transitive membership in groups
 
 #### Request
 
@@ -191,7 +147,8 @@ The following is an example of the request.
   "name": "get_count_only"
 }-->
 ```msgraph-interactive
-GET https://graph.microsoft.com/beta/users/{id}/transitiveMemberOf/$/Microsoft.Graph.Group/$count
+GET https://graph.microsoft.com/beta/users/{id}/transitiveMemberOf/$/microsoft.graph.group/$count
+ConsistencyLevel: eventual
 ```
 
 #### Response
@@ -212,7 +169,7 @@ Content-type: text/plain
 588
 
 
-### Example 5: Use $search to get transitive membership in groups with display names that contain the letters 'tier' including a count of returned objects
+### Example 4: Use $search and OData cast to get transitive membership in groups with display names that contain the letters 'tier' including a count of returned objects
 
 #### Request
 
@@ -223,7 +180,8 @@ The following is an example of the request.
   "name": "get_tier_count"
 }-->
 ```msgraph-interactive
-GET https://graph.microsoft.com/beta/users/{id}/transitiveMemberOf/$/Microsoft.Graph.Group?$count=true&$orderby=displayName&$search="displayName:tier"&$select=displayName,id
+GET https://graph.microsoft.com/beta/users/{id}/transitiveMemberOf/$/microsoft.graph.group?$count=true&$orderby=displayName&$search="displayName:tier"&$select=displayName,id
+ConsistencyLevel: eventual
 ```
 
 #### Response
@@ -253,7 +211,7 @@ Content-type: application/json
 }
 ```
 
-### Example 6: Use $filter to get transitive membership in groups with a display name that starts with 'a' including a count of returned objects
+### Example 5: Use $filter and OData cast to get transitive membership in groups with a display name that starts with 'a' including a count of returned objects
 
 #### Request
 
@@ -264,7 +222,8 @@ The following is an example of the request.
   "name": "get_a_count"
 }-->
 ```msgraph-interactive
-GET https://graph.microsoft.com/beta/users/{id}/transitiveMemberOf/$/Microsoft.Graph.Group?$count=true&$orderby=displayName&$filter=startswith(displayName, 'a') 
+GET https://graph.microsoft.com/beta/users/{id}/transitiveMemberOf/$/microsoft.graph.group?$count=true&$orderby=displayName&$filter=startswith(displayName, 'a')
+ConsistencyLevel: eventual
 ```
 
 #### Response

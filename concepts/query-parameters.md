@@ -91,12 +91,11 @@ GET  https://graph.microsoft.com/v1.0/me/contacts?$count=true
 
 
 The `$count` query parameter is supported for these collections of resources and their relationships that derive from [directoryObject](/graph/api/resources/directoryobject?view=graph-rest-1.0):
-- [application](/graph/api/resources/application?view=graph-rest-1.0)
-- [contact](/graph/api/resources/contact?view=graph-rest-1.0)
-- [device](/graph/api/resources/device?view=graph-rest-1.0)
-- [group](/graph/api/resources/group?view=graph-rest-1.0)
-- [service principal](/graph/api/resources/serviceprincipal?view=graph-rest-1.0)
-- [users](/graph/api/resources/user?view=graph-rest-1.0).
+- [application](https://docs.microsoft.com/graph/api/resources/application?view=graph-rest-1.0)
+- [contact](https://docs.microsoft.com/graph/api/resources/contact?view=graph-rest-1.0)
+- [device](https://docs.microsoft.com/graph/api/resources/device?view=graph-rest-1.0)
+- [group](https://docs.microsoft.com/graph/api/resources/group?view=graph-rest-1.0)
+- [users](https://docs.microsoft.com/graph/api/resources/user?view=graph-rest-1.0).
 
 ## expand parameter
 
@@ -126,7 +125,7 @@ GET https://graph.microsoft.com/v1.0/me/drive/root?$expand=children($select=id,n
 
 ## filter parameter
 
-Use the `$filter` query parameter to retrieve just a subset of a collection. 
+Use the `$filter` query parameter to retrieve just a subset of a collection. The `$filter` query parameter can also be used to retrieve for relationships like member, memberOf, transitiveMember, and transitiveMemberOf.
 
 For example, to find users whose display name starts with the letter 'J', use `startswith`.
 
@@ -229,11 +228,9 @@ GET https://graph.microsoft.com/v1.0/me/messages?$filter=Subject eq 'welcome' an
 
 Use the `$search` query parameter to restrict the results of a request to match a search criterion.
 
-> **Note:** A `$search` request returns up to 250 results.
-
 ### Using $search on message collections
 
-You can search messages based on a value in specific message properties. The results of the search are sorted by the date and time that the message was sent.
+You can search messages based on a value in specific message properties. The results of the search are sorted by the date and time that the message was sent. A `$search` request returns up to 250 results.
 
 If you do a search on messages and specify only a value without specific message properties, the search is carried out on the default search properties of **from**, **subject**, and **body**.
 
@@ -277,7 +274,7 @@ For more information about searchable email properties, KQL syntax, supported op
 
 ### Using $search on person collections
 
-You can use the Microsoft Graph People API to retrieve the people who are most relevant to a user. Relevance is determined by the user’s communication and collaboration patterns and business relationships. The People API supports the `$search` query parameter.
+You can use the Microsoft Graph People API to retrieve the people who are most relevant to a user. Relevance is determined by the user’s communication and collaboration patterns and business relationships. The People API supports the `$search` query parameter. A `$search` request returns up to 250 results.
 
 Searches on people occur on both the **displayName** and **emailAddress** properties of the [person](/graph/api/resources/person?view=graph-rest-1.0) resource.
 
@@ -338,7 +335,7 @@ To learn more about the People API, see [Get information about relevant people](
 
 ### Using $search on directory object collections
 
-You can use the `$search` query parameter to restrict results based on a search criterion such as looking for words in strings delimited by spaces, casing, and character types (numbers and special characters). The `$search` parameter is only available for **displayName** and **description** properties. For example: 
+You can use the `$search` query parameter to restrict results based on a search criterion such as looking for words in strings delimited by spaces, casing, and character types (numbers and special characters). The `$search` parameter is only available for the **displayName** property. For example: 
  
 `https://graph.microsoft.com/beta/groups/?$search="displayName:OneVideo"`
  

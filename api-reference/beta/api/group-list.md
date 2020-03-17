@@ -46,7 +46,7 @@ values, as shown in the following example:
 ```
 GET https://graph.microsoft.com/beta/groups?$orderby=displayName
 ```
-You can also use the `$count` and `$search` query parameters to limit the response. You can use `$search` on **displayName** and **description** properties. When items are added or updated for this resource, they are specially indexed for use with the `$count` and `$search` query parameters. There can be a slight delay between when an item is added or updated and when it is available in the index.
+You can also use the `$count` and `$search` query parameters to limit the response. You can use `$search` on the **displayName** property. When items are added or updated for this resource, they are specially indexed for use with the `$count` and `$search` query parameters. There can be a slight delay between when an item is added or updated and when it is available in the index.
 
 For more information on OData query options, see [OData Query Parameters](/graph/query-parameters).
 
@@ -134,6 +134,7 @@ Content-type: application/json
 }-->
 ```msgraph-interactive
 GET https://graph.microsoft.com/beta/groups?$count=true&$filter=hasMembersWithLicenseErrors+eq+true&$select=id,displayName
+ConsistencyLevel: eventual
 ```
 
 #### Response
@@ -178,6 +179,7 @@ The following is an example of the request.
 }-->
 ```msgraph-interactive
 GET https://graph.microsoft.com/beta/groups/$count
+ConsistencyLevel: eventual
 ```
 
 #### Response
@@ -209,7 +211,8 @@ The following is an example of the request.
   "name": "get_a_count"
 }-->
 ```msgraph-interactive
-GET https://graph.microsoft.com/beta/groups?$filter=startswith(displayName, 'a')&$count=true&$top=1&$orderby=displayName 
+GET https://graph.microsoft.com/beta/groups?$filter=startswith(displayName, 'a')&$count=true&$top=1&$orderby=displayName
+ConsistencyLevel: eventual
 ```
 
 #### Response
@@ -251,6 +254,7 @@ The following is an example of the request.
 }-->
 ```msgraph-interactive
 GET https://graph.microsoft.com/beta/groups?$search="displayName:Video"&$count=true
+ConsistencyLevel: eventual
 ```
 
 #### Response
@@ -292,7 +296,8 @@ The following is an example of the request.
   "name": "get_video_count"
 }-->
 ```msgraph-interactive
-GET https://graph.microsoft.com/beta/groups?$search="displayName:Video" OR "description:prod"&$orderby=displayName&$count=true 
+GET https://graph.microsoft.com/beta/groups?$search="displayName:Video" OR "description:prod"&$orderby=displayName&$count=true
+ConsistencyLevel: eventual
 ```
 
 #### Response

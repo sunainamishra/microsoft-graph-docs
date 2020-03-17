@@ -32,7 +32,7 @@ GET /applications
 ```
 ## Optional query parameters
 
-This method supports the [OData Query Parameters](https://developer.microsoft.com/graph/docs/concepts/query_parameters) to help customize the response including `$search`, `$count`, and `$filter`. You can use `$search` on **displayName** and **description** properties. When items are added or updated for this resource, they are specially indexed for use with the `$count` and `$search` query parameters. There can be a slight delay between when an item is added or updated and when it is available in the index.
+This method supports the [OData Query Parameters](https://developer.microsoft.com/graph/docs/concepts/query_parameters) to help customize the response including `$search`, `$count`, and `$filter`. You can use `$search` on the **displayName** property. When items are added or updated for this resource, they are specially indexed for use with the `$count` and `$search` query parameters. There can be a slight delay between when an item is added or updated and when it is available in the index.
 
 ## Request headers
 
@@ -108,51 +108,7 @@ Content-type: application/json
 }
 ```
 
-### Example 2: Get the list of applications including a count of returned objects
-
-#### Request
-
-Here is an example of the request.
-
-<!-- {
-  "blockType": "request",
-  "name": "list_application_count"
-}-->
-```msgraph-interactive
-GET https://graph.microsoft.com/beta/applications?$count=true
-```
-
-#### Response
-
-Here is an example of the response. 
-> **Note:** The response object shown here might be shortened for readability. All the properties will be returned from an actual call.
-
-<!-- {
-  "blockType": "response",
-  "truncated": true,
-  "@odata.type": "microsoft.graph.application",
-  "isCollection": true
-} -->
-```http
-HTTP/1.1 200 OK
-Content-type: application/json
-
-{
-  "@odata.context": "https://graph.microsoft.com/beta/$metadata#applications",
-  "@odata.count":893,
-  "value": [
-    {
-      "appId": "00000000-0000-0000-0000-000000000000",
-      "identifierUris": [ "http://contoso/" ],
-      "displayName": "My app",
-      "publisherDomain": "contoso.com",
-      "signInAudience": "AzureADMyOrg"
-    }
-  ]
-}
-```
-
-### Example 4: Get only a count of applications
+### Example 2: Get only a count of applications
 
 #### Request
 
@@ -164,6 +120,7 @@ The following is an example of the request.
 }-->
 ```msgraph-interactive
 GET https://graph.microsoft.com/beta/applications/$count
+ConsistencyLevel: eventual
 ```
 
 #### Response
@@ -184,7 +141,7 @@ Content-type: text/plain
 893
 
 
-### Example 4: Use $filter and $top to get one application with a display name that starts with 'a' including a count of returned objects
+### Example 3: Use $filter and $top to get one application with a display name that starts with 'a' including a count of returned objects
 
 #### Request
 
@@ -195,7 +152,8 @@ The following is an example of the request.
   "name": "get_a_count"
 }-->
 ```msgraph-interactive
-GET https://graph.microsoft.com/beta/applications?$filter=startswith(displayName, 'a')&$count=true&$top=1&$orderby=displayName 
+GET https://graph.microsoft.com/beta/applications?$filter=startswith(displayName, 'a')&$count=true&$top=1&$orderby=displayName
+ConsistencyLevel: eventual
 ```
 
 #### Response
@@ -228,7 +186,7 @@ Content-type: application/json
 }
 ```
 
-### Example 5: Use $search to get applications with display names that contain the letters 'Web' including a count of returned objects
+### Example 4: Use $search to get applications with display names that contain the letters 'Web' including a count of returned objects
 
 #### Request
 
@@ -240,6 +198,7 @@ The following is an example of the request.
 }-->
 ```msgraph-interactive
 GET https://graph.microsoft.com/beta/applications?$search="displayName:Web"&$count=true
+ConsistencyLevel: eventual
 ```
 
 #### Response

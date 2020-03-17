@@ -28,7 +28,7 @@ One of the following permissions is required to call this API. To learn more, in
 GET /contacts
 ```
 ## Optional query parameters
-This method supports the [OData Query Parameters](https://developer.microsoft.com/graph/docs/concepts/query_parameters) to help customize the response including `$search`, `$count`, and `$filter`. You can use `$search` on **displayName** and **description** properties. When items are added or updated for this resource, they are specially indexed for use with the `$count` and `$search` query parameters. There can be a slight delay between when an item is added or updated and when it is available in the index.
+This method supports the [OData Query Parameters](https://developer.microsoft.com/graph/docs/concepts/query_parameters) to help customize the response including `$search`, `$count`, and `$filter`. You can use `$search` on the **displayName** property. When items are added or updated for this resource, they are specially indexed for use with the `$count` and `$search` query parameters. There can be a slight delay between when an item is added or updated and when it is available in the index.
 
 ## Request headers
 | Name       | Description|
@@ -121,52 +121,7 @@ Content-length: 222
 }
 ```
 
-### Example 2: Get organizational contacts for an organization including a count of returned objects
-
-#### Request
-
-<!-- {
-  "blockType": "request",
-  "name": "user_get_contacts_count"
-}-->
-```msgraph-interactive
-GET https://graph.microsoft.com/beta/contacts?$count=true$select=displayName,emailAddresses
-```
-
-#### Response
-
-Here is an example of the response. 
->**Note:** The response object shown here might be shortened for readability. All the properties will be returned from an actual call.
-
-<!-- {
-  "blockType": "response",
-  "truncated": true,
-  "@odata.type": "microsoft.graph.orgcontact",
-  "isCollection": true
-} -->
-```http
-HTTP/1.1 200 OK
-Content-type: application/json
-
-{
-  "@odata.context":"https://graph.microsoft.com/beta/$metadata#contacts('id-value')/contacts(displayName,emailAddresses)",
-  "@odata.count":893,
-  "value":[
-    {
-      "companyName":"Contoso",
-      "department":"Accounting",
-      "displayName":"Eric Solomon",
-      "givenName":"Eric",
-      "jobTitle":"Accountant",
-      "mail":"erics@contoso.com",
-      "mailNickname":"erics",
-      "surname":"Solomon"
-    }
-  ]
-}
-```
-
-### Example 3: Get only a count of organizational contacts
+### Example 2: Get only a count of organizational contacts
 
 #### Request
 
@@ -178,6 +133,7 @@ The following is an example of the request.
 }-->
 ```msgraph-interactive
 GET https://graph.microsoft.com/beta/contacts/$count
+ConsistencyLevel: eventual
 ```
 
 #### Response
@@ -197,7 +153,7 @@ Content-type: text/plain
 
 893
 
-### Example 4: Use $filter and $top to get one organizational contact with a display name that starts with 'a' including a count of returned objects
+### Example 3: Use $filter and $top to get one organizational contact with a display name that starts with 'a' including a count of returned objects
 
 #### Request
 
@@ -208,7 +164,8 @@ The following is an example of the request.
   "name": "get_a_count"
 }-->
 ```msgraph-interactive
-GET https://graph.microsoft.com/beta/contacts?$filter=startswith(displayName,'A')&$count=true&$top=1&$orderby=displayName 
+GET https://graph.microsoft.com/beta/contacts?$filter=startswith(displayName,'A')&$count=true&$top=1&$orderby=displayName
+ConsistencyLevel: eventual
 ```
 
 #### Response
@@ -239,7 +196,7 @@ Content-type: application/json
 }
 ```
 
-### Example 5: Use $search to get organizational contacts with display names that contain the letters 'wa' including a count of returned objects
+### Example 4: Use $search to get organizational contacts with display names that contain the letters 'wa' including a count of returned objects
 
 #### Request
 
@@ -251,6 +208,7 @@ The following is an example of the request.
 }-->
 ```msgraph-interactive
 GET https://graph.microsoft.com/beta/contacts?$search="displayName:wa"&$count=true
+ConsistencyLevel: eventual
 ```
 
 #### Response

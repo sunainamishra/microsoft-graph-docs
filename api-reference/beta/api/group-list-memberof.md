@@ -21,9 +21,9 @@ One of the following permissions is required to call this API. To learn more, in
 
 | Permission type | Permissions (from least to most privileged) |
 |:--------------- |:------------------------------------------- |
-| Delegated (work or school account) | Group.Read.All, Directory.Read.All, Directory.ReadWrite.All, Directory.AccessAsUser.All    |
+| Delegated (work or school account) | GroupMember.Read.All, Group.Read.All, Directory.Read.All, Directory.ReadWrite.All, Directory.AccessAsUser.All    |
 | Delegated (personal Microsoft account) | Not supported. |
-| Application | Group.Read.All, Directory.Read.All, Directory.ReadWrite.All |
+| Application | GroupMember.Read.All, Group.Read.All, Directory.Read.All, Directory.ReadWrite.All |
 
 ## HTTP request
 
@@ -34,14 +34,14 @@ GET /groups/{id}/memberOf
 
 ## Optional query parameters
 
-This method supports the [OData Query Parameters](https://developer.microsoft.com/graph/docs/concepts/query_parameters) to help customize the response including `$search`, `$count`, and `$filter`. You can use `$search` on **displayName** and **description** properties. When items are added or updated for this resource, they are specially indexed for use with the `$count` and `$search` query parameters. There can be a slight delay between when an item is added or updated and when it is available in the index.
+This method supports the [OData Query Parameters](https://developer.microsoft.com/graph/docs/concepts/query_parameters) to help customize the response including `$search`, `$count`, and `$filter`. OData cast is also enabled, for example, you can cast to get just the groups the group is a member of. You can use `$search` on the **displayName** property. When items are added or updated for this resource, they are specially indexed for use with the `$count` and `$search` query parameters. There can be a slight delay between when an item is added or updated and when it is available in the index.
 
 ## Request headers
 
 | Name | Description |
 |:---- |:----------- |
 | Authorization  | Bearer {token}. Required. |
-| ConsistencyLevel | The value is always `eventual`. This header is required when using the `$count` and `$search` query parameters. |
+| ConsistencyLevel | The value is always `eventual`. This header is required when using the `$count`, `$search`, `$filter`, and OData cast query parameters. |
 
 ## Request body
 
@@ -109,51 +109,7 @@ Content-type: application/json
 }
 ```
 
-### Example 2: Get groups and administrative units that the group is a direct member of including a count of returned objects
-
-#### Request
-
-The following is an example of the request.
-
-<!-- {
-  "blockType": "request",
-  "name": "group_get_memberof_count"
-}-->
-```msgraph-interactive
-GET https://graph.microsoft.com/beta/groups/{id}/memberOf?$count=true
-```
-
-#### Response
-
-The following is an example of the response.
->**Note:** The response object shown here might be shortened for readability. All the properties will be returned from an actual call.
-
-<!-- {
-  "blockType": "response",
-  "truncated": true,
-  "@odata.type": "microsoft.graph.directoryObject",
-  "isCollection": true
-} -->
-```http
-HTTP/1.1 200 OK
-Content-type: application/json
-
-{
-  "@odata.context":"https://graph.microsoft.com/beta/$metadata#directoryObjects",
-  "@odata.count":294,
-  "value": [
-    {
-      "id": "11111111-2222-3333-4444-555555555555",
-      "mail": "group1@contoso.com",
-      "mailEnabled": true,
-      "mailNickname": "Contoso1",
-      "securityEnabled": true
-    }
-  ]
-}
-```
-
-### Example 3: Get only a count of all membership
+### Example 2: Get only a count of all memberships
 
 #### Request
 
@@ -165,6 +121,7 @@ The following is an example of the request.
 }-->
 ```msgraph-interactive
 GET https://graph.microsoft.com/beta/groups/{id}/memberOf/$count
+ConsistencyLevel: eventual
 ```
 
 #### Response
@@ -185,7 +142,7 @@ Content-type: text/plain
 394
 
 
-### Example 4: Get only a count of group membership
+### Example 3: Use OData cast to get only a count of group membership
 
 #### Request
 
@@ -196,7 +153,8 @@ The following is an example of the request.
   "name": "get_count_group_only"
 }-->
 ```msgraph-interactive
-GET https://graph.microsoft.com/beta/groups/{id}/memberOf/$/Microsoft.Graph.Group/$count
+GET https://graph.microsoft.com/beta/groups/{id}/memberOf/$/microsoft.graph.group/$count
+ConsistencyLevel: eventual
 ```
 
 #### Response
@@ -216,8 +174,7 @@ Content-type: text/plain
 
 394
 
-
-### Example 5: Use $search to get membership with display names that contain the letters 'Video' including a count of returned objects
+### Example 4: Use $search to get membership with display names that contain the letters 'Video' including a count of returned objects
 
 #### Request
 
@@ -229,6 +186,7 @@ The following is an example of the request.
 }-->
 ```msgraph-interactive
 GET https://graph.microsoft.com/beta/groups/{id}/memberOf?$count=true&$orderby=displayName&$search="displayName:Video"
+ConsistencyLevel: eventual
 ```
 
 #### Response
@@ -259,7 +217,7 @@ Content-type: application/json
 }
 ```
 
-### Example 6: Use $filter to get membership with a display name that starts with the letter 'A' including a count of returned objects
+### Example 5: Use $filter to get membership with a display name that starts with the letter 'A' including a count of returned objects
 
 #### Request
 
@@ -271,6 +229,7 @@ The following is an example of the request.
 }-->
 ```msgraph-interactive
 GET https://graph.microsoft.com/beta/groups/{id}/memberOf?$count=true&$orderby=displayName&$filter=startswith(displayName, 'A')
+ConsistencyLevel: eventual
 ```
 
 #### Response
