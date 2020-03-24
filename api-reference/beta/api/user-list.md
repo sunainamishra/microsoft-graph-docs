@@ -379,14 +379,6 @@ The following is an example of the request.
 ```msgraph-interactive
 GET https://graph.microsoft.com/beta/users?$filter=startswith(displayName,'a')&$orderby=displayName&$count=true&$top=1
 ConsistencyLevel: eventual
-=======
-
-<!-- {
-  "blockType": "request",
-  "name": "get_signin_last_time_filter"
-}-->
-```msgraph-interactive
-GET https://graph.microsoft.com/beta/users?$filter=startswith(displayName,'Eric')&$select=displayName,signInActivity
 ```
 
 #### Response
