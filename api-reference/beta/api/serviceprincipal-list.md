@@ -9,6 +9,8 @@ author: "davidmu1"
 
 # List servicePrincipals
 
+Namespace: microsoft.graph
+
 [!INCLUDE [beta-disclaimer](../../includes/beta-disclaimer.md)]
 
 Retrieve a list of servicePrincipal objects.
