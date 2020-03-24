@@ -153,7 +153,7 @@ The following is an example of the request.
   "name": "get_count_group_only"
 }-->
 ```msgraph-interactive
-GET https://graph.microsoft.com/beta/groups/{id}/memberOf/$/microsoft.graph.group/$count
+GET https://graph.microsoft.com/beta/devices/{id}/memberOf/$/Microsoft.Graph.Group/$count
 ConsistencyLevel: eventual
 ```
 

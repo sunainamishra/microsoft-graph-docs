@@ -53,9 +53,11 @@ Do not supply a request body for this method.
 
 If successful, this method returns a `200 OK` response code and collection of [directoryObject](../resources/directoryobject.md) objects in the response body.
 
-## Example
+## Examples
 
-### Request
+### Example 1: Get groups that the device is a transitive member of
+
+#### Request
 
 Here is an example of the request.
 
@@ -83,7 +85,7 @@ GET https://graph.microsoft.com/beta/devices/{id}/transitiveMemberOf
 ---
 
 
-### Response
+#### Response
 
 Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 
@@ -112,6 +114,39 @@ Content-type: application/json
   ]
 }
 ```
+
+### Example 2: Get only a count of all transitive membership
+
+#### Request
+
+The following is an example of the request.
+
+<!-- {
+  "blockType": "request",
+  "name": "get_count_only"
+}-->
+```msgraph-interactive
+GET https://graph.microsoft.com/beta/devices/{id}/transitiveMemberOf/$count
+ConsistencyLevel: eventual
+```
+
+#### Response
+
+The following is an example of the response.
+
+<!-- {
+  "blockType": "response",
+  "truncated": true,
+  "@odata.type": "microsoft.graph.directoryObject",
+  "isCollection": true
+} -->
+```http
+HTTP/1.1 200 OK
+Content-type: text/plain
+```
+
+294
+
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
 2015-10-25 14:57:30 UTC -->

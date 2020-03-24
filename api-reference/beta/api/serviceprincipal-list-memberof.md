@@ -48,11 +48,13 @@ Do not supply a request body for this method.
 
 If successful, this method returns a `200 OK` response code and collection of [directoryObject](../resources/directoryobject.md) objects in the response body.
 
-## Example
+## Examples
 
-### Request
+### Example 1: Get groups and directory roles that the service principal is a direct member of
 
-Here is an example of the request.
+#### Request
+
+The following is an example of the request.
 
 # [HTTP](#tab/http)
 <!-- {
@@ -77,9 +79,11 @@ GET https://graph.microsoft.com/beta/servicePrincipals/{id}/memberOf
 ---
 
 
-### Response
+#### Response
 
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+The following is an example of the response. 
+> **Note:** The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+
 <!-- {
   "blockType": "response",
   "truncated": true,
@@ -101,6 +105,166 @@ Content-type: application/json
       "groupTypes": [],
       "mailEnabled": false,
       "securityEnabled": true,
+    }
+  ]
+}
+```
+
+### Example 2: Get only a count of all memberships
+
+#### Request
+
+The following is an example of the request.
+
+<!-- {
+  "blockType": "request",
+  "name": "get_count_only"
+}-->
+```msgraph-interactive
+GET https://graph.microsoft.com/beta/servicePrincipals/{id}/memberOf/$count
+ConsistencyLevel: eventual
+```
+
+#### Response
+
+The following is an example of the response.
+
+<!-- {
+  "blockType": "response",
+  "truncated": true,
+  "@odata.type": "microsoft.graph.directoryObject",
+  "isCollection": true
+} -->
+```http
+HTTP/1.1 200 OK
+Content-type: text/plain
+```
+
+394
+
+### Example 3: Use OData cast to get only a count of group membership
+
+#### Request
+
+The following is an example of the request.
+
+<!-- {
+  "blockType": "request",
+  "name": "get_count_group_only"
+}-->
+```msgraph-interactive
+GET https://graph.microsoft.com/beta/servicePrincipals/{id}/memberOf/$/Microsoft.Graph.Group/$count
+ConsistencyLevel: eventual
+```
+
+#### Response
+
+The following is an example of the response.
+
+<!-- {
+  "blockType": "response",
+  "truncated": true,
+  "@odata.type": "microsoft.graph.directoryObject",
+  "isCollection": true
+} -->
+```http
+HTTP/1.1 200 OK
+Content-type: text/plain
+```
+
+394
+
+### Example 4: Use $search and OData cast to get group membership with display names that contain the letters 'Video' including a count of returned objects
+
+#### Request
+
+The following is an example of the request.
+
+<!-- {
+  "blockType": "request",
+  "name": "get_video_count"
+}-->
+```msgraph-interactive
+GET iv.	https://graph.microsoft.com/beta/servicePrincipals/{id}/memberOf/$/Microsoft.Graph.Group?$count=true&$orderby=displayName&$search=”displayName:Video" 
+ConsistencyLevel: eventual
+```
+
+#### Response
+
+The following is an example of the response.
+>**Note:** The response object shown here might be shortened for readability. All the properties will be returned from an actual call.
+
+<!-- {
+  "blockType": "response",
+  "truncated": true,
+  "@odata.type": "microsoft.graph.directoryObject",
+  "isCollection": true
+} -->
+```http
+HTTP/1.1 200 OK
+Content-type: application/json
+
+{
+  "@odata.context":"https://graph.microsoft.com/beta/$metadata#directoryObjects",
+  "@odata.count":1396,
+  "value": [
+    {
+      "@odata.type": "#microsoft.graph.group",
+      "id": "id-value",
+      "createdDateTime": null,
+      "description": "All videos for the company",
+      "displayName": "All Videos",
+      "groupTypes": [],
+      "mailEnabled": false,
+      "securityEnabled": true
+    }
+  ]
+}
+```
+
+### Example 5: Use $filter and OData cast to get group membership with a display name that starts with the letter 'A' including a count of returned objects
+
+#### Request
+
+The following is an example of the request.
+
+<!-- {
+  "blockType": "request",
+  "name": "get_a_count"
+}-->
+```msgraph-interactive
+GET https://graph.microsoft.com/beta/servicePrincipals/{id}/memberOf/$/Microsoft.Graph.Group?$count=true&$orderby=displayName&$filter=startswith(displayName, 'A')
+ConsistencyLevel: eventual
+```
+
+#### Response
+
+The following is an example of the response.
+>**Note:** The response object shown here might be shortened for readability. All the properties will be returned from an actual call.
+
+<!-- {
+  "blockType": "response",
+  "truncated": true,
+  "@odata.type": "microsoft.graph.directoryObject",
+  "isCollection": true
+} -->
+```http
+HTTP/1.1 200 OK
+Content-type: application/json
+
+{
+  "@odata.context":"https://graph.microsoft.com/beta/$metadata#directoryObjects",
+  "@odata.count":76,
+  "value":[
+    {
+      "@odata.type": "#microsoft.graph.group",
+      "id": "id-value",
+      "createdDateTime": null,
+      "description": "All videos for the company",
+      "displayName": "All Videos",
+      "groupTypes": [],
+      "mailEnabled": false,
+      "securityEnabled": true
     }
   ]
 }
