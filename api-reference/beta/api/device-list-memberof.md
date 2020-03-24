@@ -138,39 +138,7 @@ Content-type: text/plain
 
 394
 
-### Example 3: Use OData cast to get only a count of group membership
-
-#### Request
-
-The following is an example of the request.
-
-<!-- {
-  "blockType": "request",
-  "name": "get_count_group_only"
-}-->
-```msgraph-interactive
-GET https://graph.microsoft.com/beta/devices/{id}/memberOf/$/Microsoft.Graph.Group/$count
-ConsistencyLevel: eventual
-```
-
-#### Response
-
-The following is an example of the response.
-
-<!-- {
-  "blockType": "response",
-  "truncated": true,
-  "@odata.type": "microsoft.graph.directoryObject",
-  "isCollection": true
-} -->
-```http
-HTTP/1.1 200 OK
-Content-type: text/plain
-```
-
-394
-
-### Example 4: Use $search and OData cast to get membership with display names that contain the letters 'Video' including a count of returned objects
+### Example 3: Use $search to get membership with display names that contain the letters 'Video' including a count of returned objects
 
 #### Request
 
@@ -181,7 +149,7 @@ The following is an example of the request.
   "name": "get_video_count"
 }-->
 ```msgraph-interactive
-GET https://graph.microsoft.com/beta/devices/{id}/memberOf/$/Microsoft.Graph.Group?$count=true&$orderby=displayName&$search="displayName:Video"
+GET https://graph.microsoft.com/beta/devices/{id}/memberOf/?$count=true&$orderby=displayName&$search="displayName:Video"
 ConsistencyLevel: eventual
 ```
 
@@ -213,7 +181,7 @@ Content-type: application/json
 }
 ```
 
-### Example 5: Use $filter and OData cast to get group membership with a display name that starts with the letter 'A' including a count of returned objects
+### Example 4: Use $filter to get group membership with a display name that starts with the letter 'A' including a count of returned objects
 
 #### Request
 
@@ -224,7 +192,7 @@ The following is an example of the request.
   "name": "get_a_count"
 }-->
 ```msgraph-interactive
-GET https://graph.microsoft.com/beta/devices/{id}/memberOf/$/Microsoft.Graph.Group?$count=true&$orderby=displayName&$filter=startswith(displayName, 'A')
+GET https://graph.microsoft.com/beta/devices/{id}/memberOf?$count=true&$orderby=displayName&$filter=startswith(displayName, 'A')
 ConsistencyLevel: eventual
 ```
 
