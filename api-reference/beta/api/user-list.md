@@ -9,6 +9,8 @@ doc_type: apiPageType
 
 # List users
 
+Namespace: microsoft.graph
+
 [!INCLUDE [beta-disclaimer](../../includes/beta-disclaimer.md)]
 
 Retrieve a list of [user](../resources/user.md) objects.
@@ -19,11 +21,11 @@ This operation returns by default only a subset of the more commonly used proper
 
 One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](/graph/permissions-reference).
 
-| Permission type | Permissions (from least to most privileged) |
-|:--------------- |:------------------------------------------- |
-| Delegated (work or school account) | User.ReadBasic.All, User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All, Directory.AccessAsUser.All |
-| Delegated (personal Microsoft account) | Not supported. |
-| Application | User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All |
+|Permission type      | Permissions (from least to most privileged)              |
+|:--------------------|:---------------------------------------------------------|
+|Delegated (work or school account) | User.ReadBasic.All, User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All, Directory.AccessAsUser.All, Auditlogs.Read.All |
+|Delegated (personal Microsoft account) | Not supported.    |
+|Application | User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All, Auditlogs.Read.All |
 
 ## HTTP request
 
@@ -234,6 +236,7 @@ Content-type: application/json
 }
 ```
 
+
 ### Example 4: Get only a count of users
 
 #### Request
@@ -280,6 +283,14 @@ The following is an example of the request.
 ```msgraph-interactive
 GET https://graph.microsoft.com/beta/users?$filter=startswith(displayName,'a')&$orderby=displayName&$count=true&$top=1
 ConsistencyLevel: eventual
+=======
+
+<!-- {
+  "blockType": "request",
+  "name": "get_signin_last_time_filter"
+}-->
+```msgraph-interactive
+GET https://graph.microsoft.com/beta/users?$filter=startswith(displayName,'Eric')&$select=displayName,signInActivity
 ```
 
 #### Response
@@ -297,7 +308,7 @@ The following is an example of the response.
 HTTP/1.1 200 OK
 Content-type: application/json
 
-{
+
   "@odata.context":"https://graph.microsoft.com/beta/$metadata#users",
   "@odata.count":1,
   "value":[
@@ -307,7 +318,7 @@ Content-type: application/json
       "mailNickname":"a_contoso.com#EXT#",
       "otherMails":["a@contoso.com"],
       "proxyAddresses":["SMTP:a@contoso.com"],
-      "userPrincipalName":"a_contoso.com#EXT#@microsoft.onmicrosoft.com",
+      "userPrincipalName":"a_contoso.com#EXT#@microsoft.onmicrosoft.com"
     }
   ]
 }
@@ -372,12 +383,11 @@ The following is an example of the request.
 ```msgraph-interactive
 GET https://graph.microsoft.com/beta/users?$search="displayName:wa" OR "displayName:to"&$orderbydisplayName&$count=true
 ConsistencyLevel: eventual
-```
 
 #### Response
 
-The following is an example of the response.
->**Note:** The response object shown here might be shortened for readability. All the properties will be returned from an actual call.
+The following is an example of the response. 
+> **Note:** The response object shown here might be shortened for readability. All the properties will be returned from an actual call.
 
 <!-- {
   "blockType": "response",
@@ -411,6 +421,7 @@ Content-type: application/json
 }
 
 ```
+
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
 2015-10-25 14:57:30 UTC -->
 <!--
