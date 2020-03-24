@@ -38,14 +38,14 @@ GET /devices/{id}/transitiveMemberOf
 
 ## Optional query parameters
 
-This method supports the [OData Query Parameters](https://developer.microsoft.com/graph/docs/concepts/query_parameters) to help customize the response.
+This method supports the [OData Query Parameters](https://developer.microsoft.com/graph/docs/concepts/query_parameters) to help customize the response including `$search`, `$count`, and `$filter`. OData cast is also enabled, for example, you can cast to get just the directoryRoles the user is a member of. You can use `$search` on the **displayName** property. When items are added or updated for this resource, they are specially indexed for use with the `$count` and `$search` query parameters. There can be a slight delay between when an item is added or updated and when it is available in the index.
 
 ## Request headers
 
 | Header       | Value |
 |:---------------|:--------|
 | Authorization  | Bearer {token}. Required.  |
-| Accept  | application/json|
+| ConsistencyLevel | The value is always `eventual`. This header is required when using the `$count`, `$search`, `$filter`, and OData cast query parameters. It uses an index that may not be up-to-date with recent changes to the object. |
 
 ## Request body
 
