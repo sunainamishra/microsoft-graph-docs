@@ -90,12 +90,13 @@ GET  https://graph.microsoft.com/v1.0/me/contacts?$count=true
 [Try in Graph Explorer](https://developer.microsoft.com/graph/graph-explorer?request=me/contacts?$count=true&method=GET&version=v1.0)
 
 
-The `$count` query parameter is supported for these collections of resources and their relationships that derive from [directoryObject](/graph/api/resources/directoryobject?view=graph-rest-1.0):
-- [application](https://docs.microsoft.com/graph/api/resources/application?view=graph-rest-1.0)
-- [contact](https://docs.microsoft.com/graph/api/resources/contact?view=graph-rest-1.0)
-- [device](https://docs.microsoft.com/graph/api/resources/device?view=graph-rest-1.0)
-- [group](https://docs.microsoft.com/graph/api/resources/group?view=graph-rest-1.0)
-- [users](https://docs.microsoft.com/graph/api/resources/user?view=graph-rest-1.0).
+The `$count` query parameter is supported for these collections of resources and their relationships that derive from [directoryObject](/graph/api/resources/directoryobject?view=graph-rest-beta):
+- [application](https://docs.microsoft.com/graph/api/resources/application?view=graph-rest-beta)
+- [contact](https://docs.microsoft.com/graph/api/resources/contact?view=graph-rest-beta)
+- [device](https://docs.microsoft.com/graph/api/resources/device?view=graph-rest-beta)
+- [group](https://docs.microsoft.com/graph/api/resources/group?view=graph-rest-beta)
+- [servicePrincipal](https://docs.microsoft.com/graph/api/resources/serviceprincipal?view=graph-rest-beta)
+- [users](https://docs.microsoft.com/graph/api/resources/user?view=graph-rest-beta)
 
 ## expand parameter
 
