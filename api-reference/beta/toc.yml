@@ -9013,7 +9013,8 @@
           href: api/identityprovider-update.md
         - name: Delete identity provider
           href: api/identityprovider-delete.md
-      - name: Information protection        
+      - name: Information protection
+        items:
         - name: Threat assessment
           items:
           - name: Overview
