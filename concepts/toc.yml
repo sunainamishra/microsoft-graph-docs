@@ -167,10 +167,7 @@ items:
         displayname: Dynamics, Dynamics 365 Business Central
       - name: Identity and access
         href: azuread-identity-access-management-concept-overview.md
-        displaName: Azure AD, Microsoft identity platform
-        items:
-          - name: Information Protection
-            href: information-protection-overview.md
+        displaName: Azure AD, Microsoft identity platform        
       - name: Mail
         displayName: Outlook, Outlook mail
         items:
@@ -296,7 +293,9 @@ items:
           - name: Integrated solutions
             href: security-integration.md
           - name: Partner opportunities
-            href: security-partner-overview.md
+            href: security-partner-overview.md            
+          - name: Information Protection
+            href: information-protection-overview.md
       - name: Sites and lists
         href: sharepoint-concept-overview.md
         displayName: SharePoint, OneDrive, OneDrive for Business, OneDrive business, OneDrive personal
