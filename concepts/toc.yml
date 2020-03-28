@@ -292,10 +292,10 @@ items:
             href: security-authorization.md
           - name: Integrated solutions
             href: security-integration.md
-          - name: Partner opportunities
-            href: security-partner-overview.md            
           - name: Information Protection
             href: information-protection-overview.md
+          - name: Partner opportunities
+            href: security-partner-overview.md            
       - name: Sites and lists
         href: sharepoint-concept-overview.md
         displayName: SharePoint, OneDrive, OneDrive for Business, OneDrive business, OneDrive personal
