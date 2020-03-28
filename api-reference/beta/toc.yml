@@ -10494,84 +10494,82 @@
             href: api/externalitem-delete.md
     - name: Security
       items:
-        name: Security API, Microsoft Graph Security API
+      - name: Overview
+        href: resources/security-api-overview.md
+      - name: Actions
+        href: resources/securityaction.md
         items:
-        - name: Overview
-          href: resources/security-api-overview.md
-        - name: Actions
-          href: resources/securityaction.md
-          items:
-          - name: List security actions
-            href: api/securityactions-list.md
-          - name: Create security action
-            href: api/securityactions-post.md
-          - name: Get security action
-            href: api/securityaction-get.md
-          - name: Cancel security action
-            href: api/securityaction-cancelsecurityaction.md
-        - name: Alerts
-          href: resources/alert.md
-          items:
-          - name: List alerts
-            href: api/alert-list.md
-          - name: Get alert
-            href: api/alert-get.md
-          - name: Update alert
-            href: api/alert-update.md
-          - name: Update multiple alerts
-            href: api/alert-updatealerts.md
-        - name: Secure scores
-          href: resources/securescores.md
-          items:
-          - name: List secure scores
-            href: api/securescores-list.md
-        - name: Secure score control profiles
-          href: resources/securescorecontrolprofiles.md
-          items:
-          - name: List secure score control profiles
-            href: api/securescorecontrolprofiles-list.md
-          - name: Update secure score control profiles
-            href: api/securescorecontrolprofiles-update.md
-        - name: Threat intelligence indicators
-          href: resources/tiindicator.md
-          items:
-          - name: List
-            href: api/tiindicators-list.md
-          - name: Create
-            href: api/tiindicators-post.md
-          - name: Submit multiple
-            href: api/tiindicator-submittiindicators.md
-          - name: Get
-            href: api/tiindicator-get.md
-          - name: Update
-            href: api/tiindicator-update.md
-          - name: Update multiple
-            href: api/tiindicator-updatetiindicators.md
-          - name: Delete
-            href: api/tiindicator-delete.md
-          - name: Delete multiple
-            href: api/tiindicator-deletetiindicators.md
-          - name: Delete multiple by external ID
-            href: api/tiindicator-deletetiindicatorsbyexternalid.md
-        - name: Errors
-          href: resources/security-error-codes.md
-        name: Information protection
+        - name: List security actions
+          href: api/securityactions-list.md
+        - name: Create security action
+          href: api/securityactions-post.md
+        - name: Get security action
+          href: api/securityaction-get.md
+        - name: Cancel security action
+          href: api/securityaction-cancelsecurityaction.md
+      - name: Alerts
+        href: resources/alert.md
         items:
-        - name: Labels
-          href: resources/informationprotectionlabel.md
-          items:
-          - name: List labels
-            href: api/informationprotectionpolicy-list-labels.md
-          - name: Get label
-            href: api/informationprotectionlabel-get.md
-          - name: Evaluate application
-            href: api/informationprotectionlabel-evaluateapplication.md
-          - name: Evaluate classification result
-            href: api/informationprotectionlabel-evaluateclassificationresults.md
-          - name: Evaluate removal
-            href: api/informationprotectionlabel-evaluateremoval.md
-          - name: Extract label
-            href: api/informationprotectionlabel-extractlabel.md
+        - name: List alerts
+          href: api/alert-list.md
+        - name: Get alert
+          href: api/alert-get.md
+        - name: Update alert
+          href: api/alert-update.md
+        - name: Update multiple alerts
+          href: api/alert-updatealerts.md
+      - name: Secure scores
+        href: resources/securescores.md
+        items:
+        - name: List secure scores
+          href: api/securescores-list.md
+      - name: Secure score control profiles
+        href: resources/securescorecontrolprofiles.md
+        items:
+        - name: List secure score control profiles
+          href: api/securescorecontrolprofiles-list.md
+        - name: Update secure score control profiles
+          href: api/securescorecontrolprofiles-update.md
+      - name: Threat intelligence indicators
+        href: resources/tiindicator.md
+        items:
+        - name: List
+          href: api/tiindicators-list.md
+        - name: Create
+          href: api/tiindicators-post.md
+        - name: Submit multiple
+          href: api/tiindicator-submittiindicators.md
+        - name: Get
+          href: api/tiindicator-get.md
+        - name: Update
+          href: api/tiindicator-update.md
+        - name: Update multiple
+          href: api/tiindicator-updatetiindicators.md
+        - name: Delete
+          href: api/tiindicator-delete.md
+        - name: Delete multiple
+          href: api/tiindicator-deletetiindicators.md
+        - name: Delete multiple by external ID
+          href: api/tiindicator-deletetiindicatorsbyexternalid.md
+      - name: Errors
+        href: resources/security-error-codes.md
+      name: Information protection
+      items:
+      - name: Labels
+        href: resources/informationprotectionlabel.md
+        items:
+        - name: List labels
+          href: api/informationprotectionpolicy-list-labels.md
+        - name: Get label
+          href: api/informationprotectionlabel-get.md
+        - name: Evaluate application
+          href: api/informationprotectionlabel-evaluateapplication.md
+        - name: Evaluate classification result
+          href: api/informationprotectionlabel-evaluateclassificationresults.md
+        - name: Evaluate removal
+          href: api/informationprotectionlabel-evaluateremoval.md
+        - name: Extract label
+          href: api/informationprotectionlabel-extractlabel.md
     - name: Sites and lists
       displayName: SharePoint, OneDrive, OneDrive for Business, OneDrive business, OneDrive personal
       items:
