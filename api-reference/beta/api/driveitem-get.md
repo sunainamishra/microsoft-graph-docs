@@ -9,6 +9,8 @@ doc_type: apiPageType
 ---
 # Get a DriveItem resource
 
+Namespace: microsoft.graph
+
 [!INCLUDE [beta-disclaimer](../../includes/beta-disclaimer.md)]
 
 Retrieve the metadata for a [DriveItem](../resources/driveitem.md) in a [Drive](../resources/drive.md) by file system path or ID.
@@ -35,7 +37,7 @@ GET /drives/{drive-id}/items/{item-id}
 GET /drives/{drive-id}/root:/{item-path}
 GET /groups/{group-id}/drive/items/{item-id}
 GET /groups/{group-id}/drive/root:/{item-path}
-GET /teams/{teamId}/channels/{channelId}/files
+GET /teams/{teamId}/channels/{channelId}/filesFolder
 GET /me/drive/items/{item-id}
 GET /me/drive/root:/{item-path}
 GET /sites/{siteId}/drive/items/{itemId}
