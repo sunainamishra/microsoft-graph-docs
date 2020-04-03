@@ -9012,44 +9012,7 @@
         - name: Update identity provider
           href: api/identityprovider-update.md
         - name: Delete identity provider
-          href: api/identityprovider-delete.md
-      - name: Information protection
-        items:
-        - name: Labels
-          href: resources/informationprotectionlabel.md
-          items:
-          - name: List labels
-            href: api/informationprotectionpolicy-list-labels.md
-          - name: Get label
-            href: api/informationprotectionlabel-get.md
-          - name: Evaluate application
-            href: api/informationprotectionlabel-evaluateapplication.md
-          - name: Evaluate classification result
-            href: api/informationprotectionlabel-evaluateclassificationresults.md
-          - name: Evaluate removal
-            href: api/informationprotectionlabel-evaluateremoval.md
-          - name: Extract label
-            href: api/informationprotectionlabel-extractlabel.md
-        - name: Threat assessment
-          items:
-          - name: Overview
-            href: resources/threatassessment-api-overview.md
-          - name: Threat assessment request
-            href: resources/threatassessmentrequest.md
-          - name: Mail assessment request
-            href: resources/mailassessmentrequest.md
-          - name: Email file assessment request
-            href: resources/emailfileassessmentrequest.md
-          - name: File assessment request
-            href: resources/fileAssessmentRequest.md
-          - name: Url assessment request
-            href: resources/urlassessmentrequest.md
-          - name: List
-            href: api/informationprotection-list-threatassessmentrequests.md
-          - name: Create
-            href: api/informationprotection-post-threatassessmentrequests.md
-          - name: Get
-            href: api/threatassessmentrequest-get.md
+          href: api/identityprovider-delete.md       
       - name: Invitation manager
         href: resources/invitation.md
         items:
@@ -10508,7 +10471,6 @@
           - name: Delete external item
             href: api/externalitem-delete.md
     - name: Security
-      displayname: Security API, Microsoft Graph Security API
       items:
       - name: Overview
         href: resources/security-api-overview.md
@@ -10569,6 +10531,43 @@
           href: api/tiindicator-deletetiindicatorsbyexternalid.md
       - name: Errors
         href: resources/security-error-codes.md
+      - name: Information protection
+        items:
+        - name: Labels
+          href: resources/informationprotectionlabel.md
+          items:
+          - name: List labels
+            href: api/informationprotectionpolicy-list-labels.md
+          - name: Get label
+            href: api/informationprotectionlabel-get.md
+          - name: Evaluate application
+            href: api/informationprotectionlabel-evaluateapplication.md
+          - name: Evaluate classification result
+            href: api/informationprotectionlabel-evaluateclassificationresults.md
+          - name: Evaluate removal
+            href: api/informationprotectionlabel-evaluateremoval.md
+          - name: Extract label
+            href: api/informationprotectionlabel-extractlabel.md
+        - name: Threat assessment
+          items:
+          - name: Overview
+            href: resources/threatassessment-api-overview.md
+          - name: Threat assessment request
+            href: resources/threatassessmentrequest.md
+          - name: Mail assessment request
+            href: resources/mailassessmentrequest.md
+          - name: Email file assessment request
+            href: resources/emailfileassessmentrequest.md
+          - name: File assessment request
+            href: resources/fileAssessmentRequest.md
+          - name: Url assessment request
+            href: resources/urlassessmentrequest.md
+          - name: List
+            href: api/informationprotection-list-threatassessmentrequests.md
+          - name: Create
+            href: api/informationprotection-post-threatassessmentrequests.md
+          - name: Get
+            href: api/threatassessmentrequest-get.md
     - name: Sites and lists
       displayName: SharePoint, OneDrive, OneDrive for Business, OneDrive business, OneDrive personal
       items:
