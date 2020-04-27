@@ -15,12 +15,19 @@ Most of the information in the sections of this topic can be found in [**GitHub 
 
 ## Create a new branch
 
+### Create a branch using the Windows Desktop client
+
+1.	Click the drop-down to the right of Current branch.
+### Create a branch using the Git Bash command-line 
+
 1. Open your git console.
 2. Type `git pull upstream master:<new branch name>` at the prompt. This creates a new branch locally that's copied from the latest `microsoftgraph` master branch.
 3. Type `git push origin <new branch name>` at the prompt. This will alert GitHub to the new branch. You should now see the new branch in your fork of the repository on GitHub.
 4. Type `git checkout <new branch name>` to switch to your new branch.
 
-### Add new content or edit existing content
+## Add new content or edit existing content
+
+You can 
 
 You navigate to the repository on your local machine by using File Explorer. The repository files are in `C:\Users\<yourusername>\microsoft-graph-docs`.
 
