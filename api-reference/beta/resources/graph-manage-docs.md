@@ -15,25 +15,44 @@ Most of the information in the sections of this topic can be found in [**GitHub 
 
 ## Create a new branch
 
-### Create a branch using the Windows Desktop client
+You can choose to create a new branch using the GitHub Desktop client for Windows, or you can use the Git Bash console to run commands on a command-line.
 
-1.	Click the drop-down to the right of Current branch.
-### Create a branch using the Git Bash command-line 
+### Create a branch using the GitHub Desktop client
 
-1. Open your git console.
-2. Type `git pull upstream master:<new branch name>` at the prompt. This creates a new branch locally that's copied from the latest `microsoftgraph` master branch.
+1.	Click the drop-down to the right of **Current branch**.
+
+    ![New branch](windowsclient-new-branch.png)
+
+2. Enter a name for the new branch. To construct the name of the branch, specify your Github name, then hyphen, then any reasonable string that helps you identify the purpose of the branch. Select **Create new branch**. 
+
+    ![Create branch](windowsclient-create-branch.png)
+
+3. Verify that you are creating a new branch from the master branch, and then select **Create new branch**.
+
+    ![Verify branch](windowsclient-verify-branch.png)
+
+### Create a branch using Git commands
+
+1. Open your Git Bash console.
+2. Type `git pull origin master:<new branch name>` at the prompt. This creates a new branch locally that's copied from the latest `microsoft-graph-docs` master branch.
 3. Type `git push origin <new branch name>` at the prompt. This will alert GitHub to the new branch. You should now see the new branch in your fork of the repository on GitHub.
 4. Type `git checkout <new branch name>` to switch to your new branch.
 
 ## Add new content or edit existing content
 
-You can 
-
 You navigate to the repository on your local machine by using File Explorer. The repository files are in `C:\Users\<yourusername>\microsoft-graph-docs`.
 
 To edit files, open them in an editor of your choice and modify them. To create a new file, use the editor of your choice and save the new file in the appropriate location in your local copy of the repository. While working, be sure to save your work frequently.
 
-The files in `C:\Users\<yourusername>\microsoft-graph-docs` are a working copy of the new branch that you created in your local repository. Changing anything in this folder doesn't affect the local repository until you commit a change.
+The files are a working copy of the new branch that you created in your local repository. Changing anything in this folder doesn't affect the local repository until you commit a change.
+
+### Commit a change using the GitHub Desktop client
+
+In the Changes pane, select **Commit to <branch name>**.
+
+![Commit changes](windowsclient-commit-change.png)
+
+### Commit changes using Git commands
 
 To commit a change to the local repository, type the following commands in your git console:
 
@@ -52,11 +71,18 @@ You can commit multiple times while you are doing your work, or you can wait and
 
 When you're finished with your work and are ready to have it merged into master, follow these steps:
 
+### Submit a pull request using the GitHub Desktop client
+
+Select **Publish** for your current branch.
+
+![Publish changes](windowsclient-publish-changes.png)
+
+### Submit a pull request using Git commands
+
 1. In your git console, type `git push origin <new branch name>` at the command prompt. This command pushes the current state of your new branch, including all commits made in the previous steps, to master.
 2. On the GitHub site, to the new branch.
 3. Select **Pull Request** at the top of the page.
 4. Ensure that the Base branch is `microsoftgraph/microsoft-graph-docs@master` and the Head branch is `<your username>/microsoft-graph-docs@<branch name>`
-5. Select **Update Commit Range**.
 6. Give your pull request a Title, and describe all the changes you're making. If your bug fixes a UserVoice item or GitHub issue, be sure to reference that issue in the description.
 7. Submit the pull request.
 
@@ -66,8 +92,15 @@ After a branch is successfully merged (i.e., your pull request is accepted), don
 
 After your changes are successfully merged into master, you can delete the branch you used because you no longer need it. Any additional work requires a new branch.
 
-To delete your branch follow these steps:
+### Delete a branch using the GitHub Desktop client
+
+1. In the top menu, select **Branch > Delete**.
+2. Make sure of the branch you are deleting and then select **Delete**.
+
+    ![Delete branch](windowsclient-delete-branch.png)
+
+### Delete a branch using Git commands
 
 1. In your git console type `git checkout master` at the command prompt. This ensures that you aren't in the branch to be deleted (which isn't allowed).
 2. Next, type `git branch -d <branch name>` at the command prompt. This deletes the branch on your local machine only if it has been successfully merged to the upstream repository. (You can override this behavior with the `D` flag, but first be sure you want to do this).
-3. Finally, type `git push origin :<branch name>` at the command prompt (a space before the colon and no space after it). This will delete the branch on your github fork.
+3. Finally, type `git push origin :<branch name>` at the command prompt (a space before the colon and no space after it). This deletes the branch on your github fork.
