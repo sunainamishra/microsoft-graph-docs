@@ -33,7 +33,7 @@ There are two scenarios where an app can get messages in another user's mail fol
 ## Permissions
 One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](/graph/permissions-reference).
 
-> **Important:** Permissions are listed from least privileged to most privileged in the following table. Choose one starting from the left of the Permissions column. 
+> **Important:** Permissions are listed from least privileged to most privileged in the following table. Choose one starting from the left in the Permissions column. 
 
 |Permission type      | Permissions (from least to most privileged)              |
 |:--------------------|:---------------------------------------------------------|
