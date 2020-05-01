@@ -56,7 +56,7 @@ var timeConstraint = new TimeConstraint
 
 var isOrganizerOptional = false;
 
-var meetingDuration = "PT1H";
+var meetingDuration = new Duration("PT1H");
 
 var returnSuggestionReasons = true;
 

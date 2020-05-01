@@ -43,13 +43,13 @@ var bookingAppointment = new BookingAppointment
 	CustomerPhone = "213-555-0199",
 	End = new DateTimeTimeZone
 	{
-		DateTime = "2018-05-01T12:30:00+00:00",
+		DateTime = "2018-05-01T05:30:00-07:00",
 		TimeZone = "UTC"
 	},
 	InvoiceAmount = 10,
 	InvoiceDate = new DateTimeTimeZone
 	{
-		DateTime = "2018-05-01T12:30:00+00:00",
+		DateTime = "2018-05-01T05:30:00-07:00",
 		TimeZone = "UTC"
 	},
 	InvoiceId = "1001",
@@ -62,8 +62,8 @@ var bookingAppointment = new BookingAppointment
 	InvoiceStatus = BookingInvoiceStatus.Open,
 	InvoiceUrl = "theInvoiceUrl",
 	OptOutOfCustomerEmail = false,
-	PostBuffer = "PT10M",
-	PreBuffer = "PT5M",
+	PostBuffer = new Duration("PT10M"),
+	PreBuffer = new Duration("PT5M"),
 	Price = 10,
 	PriceType = BookingPriceType.FixedPrice,
 	Reminders = new List<BookingReminder>()
@@ -71,7 +71,7 @@ var bookingAppointment = new BookingAppointment
 		new BookingReminder
 		{
 			Message = "This service is tomorrow",
-			Offset = "P1D",
+			Offset = new Duration("P1D"),
 			AdditionalData = new Dictionary<string, object>()
 			{
 				{"recipients@odata.type","#microsoft.graph.bookingReminderRecipients"}
@@ -81,7 +81,7 @@ var bookingAppointment = new BookingAppointment
 		new BookingReminder
 		{
 			Message = "Please be available to enjoy your lunch service.",
-			Offset = "PT1H",
+			Offset = new Duration("PT1H"),
 			AdditionalData = new Dictionary<string, object>()
 			{
 				{"recipients@odata.type","#microsoft.graph.bookingReminderRecipients"}
@@ -91,7 +91,7 @@ var bookingAppointment = new BookingAppointment
 		new BookingReminder
 		{
 			Message = "Please check traffic for next cater.",
-			Offset = "PT2H",
+			Offset = new Duration("PT2H"),
 			AdditionalData = new Dictionary<string, object>()
 			{
 				{"recipients@odata.type","#microsoft.graph.bookingReminderRecipients"}
@@ -133,7 +133,7 @@ var bookingAppointment = new BookingAppointment
 	ServiceNotes = "Customer requires punctual service.",
 	Start = new DateTimeTimeZone
 	{
-		DateTime = "2018-05-01T12:00:00+00:00",
+		DateTime = "2018-05-01T05:00:00-07:00",
 		TimeZone = "UTC"
 	}
 };

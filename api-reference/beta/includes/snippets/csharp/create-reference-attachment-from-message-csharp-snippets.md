@@ -10,8 +10,8 @@ var attachment = new ReferenceAttachment
 {
 	Name = "Personal pictures",
 	SourceUrl = "https://contoso.com/personal/mario_contoso_net/Documents/Pics",
-	ProviderType = "oneDriveConsumer",
-	Permission = "Edit",
+	ProviderType = ReferenceAttachmentProvider.OneDriveConsumer,
+	Permission = ReferenceAttachmentPermission.Edit,
 	IsFolder = "True"
 };
 

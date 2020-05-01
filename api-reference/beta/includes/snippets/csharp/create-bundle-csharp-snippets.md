@@ -16,7 +16,7 @@ var driveItem = new DriveItem
 	Bundle = new Bundle
 	{
 	},
-	Children = new List<DriveItem>()
+	Children = (IDriveItemChildrenCollectionPage)new List<DriveItem>()
 	{
 		new DriveItem
 		{

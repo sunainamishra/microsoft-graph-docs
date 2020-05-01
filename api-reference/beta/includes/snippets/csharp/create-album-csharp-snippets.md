@@ -19,7 +19,7 @@ var driveItem = new DriveItem
 		{
 		}
 	},
-	Children = new List<DriveItem>()
+	Children = (IDriveItemChildrenCollectionPage)new List<DriveItem>()
 	{
 		new DriveItem
 		{

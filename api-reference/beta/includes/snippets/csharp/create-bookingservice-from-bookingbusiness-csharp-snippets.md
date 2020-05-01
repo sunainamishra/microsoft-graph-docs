@@ -8,7 +8,7 @@ GraphServiceClient graphClient = new GraphServiceClient( authProvider );
 
 var bookingService = new BookingService
 {
-	DefaultDuration = "PT1H30M",
+	DefaultDuration = new Duration("PT1H30M"),
 	DefaultLocation = new Location
 	{
 		Address = new PhysicalAddress
@@ -51,7 +51,7 @@ var bookingService = new BookingService
 		new BookingReminder
 		{
 			Message = "Please be reminded that this service is tomorrow.",
-			Offset = "P1D",
+			Offset = new Duration("P1D"),
 			AdditionalData = new Dictionary<string, object>()
 			{
 				{"recipients@odata.type","#microsoft.graph.bookingReminderRecipients"}
@@ -63,15 +63,15 @@ var bookingService = new BookingService
 	DisplayName = "Bento",
 	IsHiddenFromCustomers = false,
 	Notes = "Home-cooked special",
-	PostBuffer = "PT10M",
-	PreBuffer = "PT5M",
+	PostBuffer = new Duration("PT10M"),
+	PreBuffer = new Duration("PT5M"),
 	SchedulingPolicy = new BookingSchedulingPolicy
 	{
 		AllowStaffSelection = true,
-		MaximumAdvance = "P10D",
-		MinimumLeadTime = "PT10H",
+		MaximumAdvance = new Duration("P10D"),
+		MinimumLeadTime = new Duration("PT10H"),
 		SendConfirmationsToOwner = true,
-		TimeSlotInterval = "PT1H"
+		TimeSlotInterval = new Duration("PT1H")
 	},
 	StaffMemberIds = new List<String>()
 	{

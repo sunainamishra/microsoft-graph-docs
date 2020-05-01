@@ -13,7 +13,7 @@ var post = new Post
 		ContentType = BodyType.Text,
 		Content = "I attached a reference to a file on OneDrive."
 	},
-	Attachments = new List<Attachment>()
+	Attachments = (IPostAttachmentsCollectionPage)new List<Attachment>()
 	{
 		new ReferenceAttachment
 		{
