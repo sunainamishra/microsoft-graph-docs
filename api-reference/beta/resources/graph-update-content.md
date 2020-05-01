@@ -56,8 +56,6 @@ All of the steps in this section are optional depending on the type of updates y
 
 ## Add or update a resource topic
 
-### Add properties
-
 All of the steps in this section are optional depending on the type of updates you are doing.
 
 1. You should use the stub generator to create new resource topics in the following scenarios:
