@@ -16,11 +16,15 @@ API Doctor validates an HTTP example against the related resources and checks fo
 
 ## Find the error message
 
-1. API Doctor runs when you push a change to a pull request. If API Doctor discovers an issue, you see the following message in the GitHub web page. Click **Details** to proceed:
+1. API Doctor runs when you push a change to a pull request. If API Doctor discovers an issue, you see the following message in the GitHub web page. Click **Details** to proceed.
 
     ![API Doctor error](graph-api-doctor-error.png)
 
-2. On the API Doctor Logs page, click the text that says **PowerShell exited with code \'1\'**:
+2. On the details page, select **View more details on Azure Pipelines**.
+
+    ![Azure Pipelines](graph-api-doctor-pipelines.png)
+
+2. On the API Doctor Logs page, click the text that says **PowerShell exited with code \'1\'**.
 
     ![API Doctor logs](graph-api-doctor-logs.png)
 
