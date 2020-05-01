@@ -16,7 +16,7 @@ The following sections provide optional and required documentation steps when up
 - [Add or update a resource topic](#add-or-update-a-resource-topic)
 - [Add table of contents (TOC) entries](#add-table-of-contents-entries)
 - [Add changelog entries](#add-changelog-entries)
-- [Request a technical review](#request-a-technical-review)
+- [Create a PR and request a technical review](#request-a-technical-review)
 - [Request a content review](#request-a-content-review)
 - [Publish](#publish)
 
@@ -102,7 +102,7 @@ Think where your documentation should appear in the TOC, and the TOC titles you 
 
 It is required that you add entries in the changelog for the APIs and resources that you are adding. For more information, see [Microsoft Graph changelog guidelines](https://msgo.azurewebsites.net/add/document/guidelines/changelog.html).
 
-## Create a pull request and request a technical review
+## Create a PR and request a technical review
 
 All of the steps in this section are required.
 
