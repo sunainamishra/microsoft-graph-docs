@@ -16,7 +16,7 @@ The following sections provide optional and required documentation steps when up
 - [Add or update a resource topic](#add-or-update-a-resource-topic)
 - [Add table of contents (TOC) entries](#add-table-of-contents-entries)
 - [Add changelog entries](#add-changelog-entries)
-- [Create a PR and request a technical review](#request-a-technical-review)
+- [Create a PR and request a technical review](#create-a-pr-and-request-a-technical-review)
 - [Request a content review](#request-a-content-review)
 - [Publish](#publish)
 
