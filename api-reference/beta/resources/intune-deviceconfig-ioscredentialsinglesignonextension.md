@@ -3,7 +3,7 @@ title: "iosCredentialSingleSignOnExtension resource type"
 description: "Represents a Credential-type Single Sign-On extension profile for iOS devices."
 author: "dougeby"
 localization_priority: Normal
-ms.prod: "Intune"
+ms.prod: "intune"
 doc_type: resourcePageType
 ---
 
@@ -50,13 +50,13 @@ Here is a JSON representation of the resource.
   "realm": "String",
   "configurations": [
     {
-      "@odata.type": "microsoft.graph.keyStringValuePair",
-      "key": "String",
-      "value": "String"
+      "@odata.type": "microsoft.graph.keyTypedValuePair",
+      "key": "String"
     }
   ]
 }
 ```
+
 
 
 

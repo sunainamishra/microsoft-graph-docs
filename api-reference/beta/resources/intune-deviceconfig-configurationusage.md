@@ -3,7 +3,7 @@ title: "configurationUsage enum type"
 description: "Possible values of the ConfigurationUsage list."
 author: "dougeby"
 localization_priority: Normal
-ms.prod: "Intune"
+ms.prod: "intune"
 doc_type: enumPageType
 ---
 
@@ -23,6 +23,8 @@ Possible values of the ConfigurationUsage list.
 |blocked|0|Disallowed.|
 |required|1|Required.|
 |allowed|2|Optional.|
+|notConfigured|3|Not Configured.|
+
 
 
 

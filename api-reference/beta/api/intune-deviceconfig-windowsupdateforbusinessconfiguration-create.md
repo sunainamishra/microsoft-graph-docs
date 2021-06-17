@@ -3,7 +3,7 @@ title: "Create windowsUpdateForBusinessConfiguration"
 description: "Create a new windowsUpdateForBusinessConfiguration object."
 author: "dougeby"
 localization_priority: Normal
-ms.prod: "Intune"
+ms.prod: "intune"
 doc_type: apiPageType
 ---
 
@@ -20,7 +20,7 @@ Create a new [windowsUpdateForBusinessConfiguration](../resources/intune-devicec
 ## Prerequisites
 One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](/graph/permissions-reference).
 
-|Permission type|Permissions (from most to least privileged)|
+|Permission type|Permissions (from least to most privileged)|
 |:---|:---|
 |Delegated (work or school account)|DeviceManagementConfiguration.ReadWrite.All|
 |Delegated (personal Microsoft account)|Not supported.|
@@ -108,7 +108,7 @@ Here is an example of the request.
 ``` http
 POST https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations
 Content-type: application/json
-Content-length: 2840
+Content-length: 2794
 
 {
   "@odata.type": "#microsoft.graph.windowsUpdateForBusinessConfiguration",
@@ -159,8 +159,8 @@ Content-length: 2840
   "businessReadyUpdatesOnly": "all",
   "skipChecksBeforeRestart": true,
   "updateWeeks": "firstWeek",
-  "qualityUpdatesPauseStartDate": "<Unknown Primitive Type Edm.Date>",
-  "featureUpdatesPauseStartDate": "<Unknown Primitive Type Edm.Date>",
+  "qualityUpdatesPauseStartDate": "2016-12-31",
+  "featureUpdatesPauseStartDate": "2016-12-31",
   "featureUpdatesRollbackWindowInDays": 2,
   "qualityUpdatesWillBeRolledBack": true,
   "featureUpdatesWillBeRolledBack": true,
@@ -187,7 +187,7 @@ Here is an example of the response. Note: The response object shown here may be 
 ``` http
 HTTP/1.1 201 Created
 Content-Type: application/json
-Content-Length: 3012
+Content-Length: 2966
 
 {
   "@odata.type": "#microsoft.graph.windowsUpdateForBusinessConfiguration",
@@ -241,8 +241,8 @@ Content-Length: 3012
   "businessReadyUpdatesOnly": "all",
   "skipChecksBeforeRestart": true,
   "updateWeeks": "firstWeek",
-  "qualityUpdatesPauseStartDate": "<Unknown Primitive Type Edm.Date>",
-  "featureUpdatesPauseStartDate": "<Unknown Primitive Type Edm.Date>",
+  "qualityUpdatesPauseStartDate": "2016-12-31",
+  "featureUpdatesPauseStartDate": "2016-12-31",
   "featureUpdatesRollbackWindowInDays": 2,
   "qualityUpdatesWillBeRolledBack": true,
   "featureUpdatesWillBeRolledBack": true,
@@ -263,6 +263,7 @@ Content-Length: 3012
   "updateNotificationLevel": "defaultNotifications"
 }
 ```
+
 
 
 

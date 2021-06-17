@@ -3,7 +3,7 @@ title: "List mobileAppAssignments"
 description: "List properties and relationships of the mobileAppAssignment objects."
 author: "dougeby"
 localization_priority: Normal
-ms.prod: "Intune"
+ms.prod: "intune"
 doc_type: apiPageType
 ---
 
@@ -20,11 +20,11 @@ List properties and relationships of the [mobileAppAssignment](../resources/intu
 ## Prerequisites
 One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](/graph/permissions-reference).
 
-|Permission type|Permissions (from most to least privileged)|
+|Permission type|Permissions (from least to most privileged)|
 |:---|:---|
-|Delegated (work or school account)|DeviceManagementApps.ReadWrite.All, DeviceManagementApps.Read.All|
+|Delegated (work or school account)|DeviceManagementApps.Read.All, DeviceManagementApps.ReadWrite.All|
 |Delegated (personal Microsoft account)|Not supported.|
-|Application|DeviceManagementApps.ReadWrite.All, DeviceManagementApps.Read.All|
+|Application|DeviceManagementApps.Read.All, DeviceManagementApps.ReadWrite.All|
 
 ## HTTP Request
 <!-- {
@@ -60,7 +60,7 @@ Here is an example of the response. Note: The response object shown here may be 
 ``` http
 HTTP/1.1 200 OK
 Content-Type: application/json
-Content-Length: 460
+Content-Length: 763
 
 {
   "value": [
@@ -69,10 +69,15 @@ Content-Length: 460
       "id": "591620b7-20b7-5916-b720-1659b7201659",
       "intent": "required",
       "target": {
-        "@odata.type": "microsoft.graph.deviceAndAppManagementAssignmentTarget"
+        "@odata.type": "microsoft.graph.allLicensedUsersAssignmentTarget",
+        "deviceAndAppManagementAssignmentFilterId": "Device And App Management Assignment Filter Id value",
+        "deviceAndAppManagementAssignmentFilterType": "include"
       },
       "settings": {
-        "@odata.type": "microsoft.graph.mobileAppAssignmentSettings"
+        "@odata.type": "microsoft.graph.iosLobAppAssignmentSettings",
+        "vpnConfigurationId": "Vpn Configuration Id value",
+        "uninstallOnDeviceRemoval": true,
+        "isRemovable": true
       },
       "source": "policySets",
       "sourceId": "Source Id value"
@@ -80,6 +85,7 @@ Content-Length: 460
   ]
 }
 ```
+
 
 
 

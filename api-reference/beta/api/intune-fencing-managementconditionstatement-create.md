@@ -3,7 +3,7 @@ title: "Create managementConditionStatement"
 description: "Create a new managementConditionStatement object."
 author: "dougeby"
 localization_priority: Normal
-ms.prod: "Intune"
+ms.prod: "intune"
 doc_type: apiPageType
 ---
 
@@ -20,7 +20,7 @@ Create a new [managementConditionStatement](../resources/intune-fencing-manageme
 ## Prerequisites
 One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](/graph/permissions-reference).
 
-|Permission type|Permissions (from most to least privileged)|
+|Permission type|Permissions (from least to most privileged)|
 |:---|:---|
 |Delegated (work or school account)|DeviceManagementConfiguration.ReadWrite.All|
 |Delegated (personal Microsoft account)|Not supported.|
@@ -71,14 +71,15 @@ Here is an example of the request.
 ``` http
 POST https://graph.microsoft.com/beta/deviceManagement/managementConditionStatements
 Content-type: application/json
-Content-length: 323
+Content-length: 358
 
 {
   "@odata.type": "#microsoft.graph.managementConditionStatement",
   "displayName": "Display Name value",
   "description": "Description value",
   "expression": {
-    "@odata.type": "microsoft.graph.managementConditionExpression"
+    "@odata.type": "microsoft.graph.managementConditionExpressionString",
+    "value": "Value value"
   },
   "eTag": "ETag value",
   "applicablePlatforms": [
@@ -92,7 +93,7 @@ Here is an example of the response. Note: The response object shown here may be 
 ``` http
 HTTP/1.1 201 Created
 Content-Type: application/json
-Content-Length: 491
+Content-Length: 526
 
 {
   "@odata.type": "#microsoft.graph.managementConditionStatement",
@@ -102,7 +103,8 @@ Content-Length: 491
   "createdDateTime": "2017-01-01T00:02:43.5775965-08:00",
   "modifiedDateTime": "2017-01-01T00:00:22.8983556-08:00",
   "expression": {
-    "@odata.type": "microsoft.graph.managementConditionExpression"
+    "@odata.type": "microsoft.graph.managementConditionExpressionString",
+    "value": "Value value"
   },
   "eTag": "ETag value",
   "applicablePlatforms": [
@@ -110,6 +112,7 @@ Content-Length: 491
   ]
 }
 ```
+
 
 
 

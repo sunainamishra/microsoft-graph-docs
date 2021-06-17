@@ -3,7 +3,7 @@ title: "Create userExperienceAnalyticsMetric"
 description: "Create a new userExperienceAnalyticsMetric object."
 author: "dougeby"
 localization_priority: Normal
-ms.prod: "Intune"
+ms.prod: "intune"
 doc_type: apiPageType
 ---
 
@@ -20,7 +20,7 @@ Create a new [userExperienceAnalyticsMetric](../resources/intune-devices-userexp
 ## Prerequisites
 One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](/graph/permissions-reference).
 
-|Permission type|Permissions (from most to least privileged)|
+|Permission type|Permissions (from least to most privileged)|
 |:---|:---|
 |Delegated (work or school account)|DeviceManagementManagedDevices.ReadWrite.All|
 |Delegated (personal Microsoft account)|Not supported.|
@@ -67,11 +67,11 @@ Here is an example of the request.
 ``` http
 POST https://graph.microsoft.com/beta/deviceManagement/userExperienceAnalyticsRegressionSummary/modelRegression
 Content-type: application/json
-Content-length: 147
+Content-length: 128
 
 {
   "@odata.type": "#microsoft.graph.userExperienceAnalyticsMetric",
-  "value": "<Unknown Primitive Type Edm.Double>",
+  "value": 1.6666666666666667,
   "unit": "Unit value"
 }
 ```
@@ -81,15 +81,16 @@ Here is an example of the response. Note: The response object shown here may be 
 ``` http
 HTTP/1.1 201 Created
 Content-Type: application/json
-Content-Length: 196
+Content-Length: 177
 
 {
   "@odata.type": "#microsoft.graph.userExperienceAnalyticsMetric",
   "id": "1371822e-822e-1371-2e82-71132e827113",
-  "value": "<Unknown Primitive Type Edm.Double>",
+  "value": 1.6666666666666667,
   "unit": "Unit value"
 }
 ```
+
 
 
 

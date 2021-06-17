@@ -37,6 +37,11 @@ One of the following permissions is required to call this API. To learn more, in
 GET /teams/{teamId}/schedule/timesOff/{timeOffId}
 ```
 
+## Optional query parameters
+
+This method does not support OData query parameters to customize the response.
+
+
 ## Request headers
 
 | Header       | Value |
@@ -76,6 +81,10 @@ GET https://graph.microsoft.com/beta/teams/{teamId}/schedule/timesOff/{timeOffId
 [!INCLUDE [sample-code](../includes/snippets/objc/timeoff-get-objc-snippets.md)]
 [!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
 
+# [Java](#tab/java)
+[!INCLUDE [sample-code](../includes/snippets/java/timeoff-get-java-snippets.md)]
+[!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
+
 ---
 
 
@@ -83,7 +92,7 @@ GET https://graph.microsoft.com/beta/teams/{teamId}/schedule/timesOff/{timeOffId
 
 The following is an example of the response. 
 
->**Note:** The response object shown here might be shortened for readability. All the properties will be returned from an actual call.
+>**Note:** The response object shown here might be shortened for readability.
 <!-- {
   "blockType": "response",
   "truncated": true,
@@ -136,3 +145,5 @@ Content-length: 401
   ]
 }
 -->
+
+

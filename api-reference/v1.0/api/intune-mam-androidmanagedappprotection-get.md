@@ -3,7 +3,7 @@ title: "Get androidManagedAppProtection"
 description: "Read properties and relationships of the androidManagedAppProtection object."
 author: "dougeby"
 localization_priority: Normal
-ms.prod: "Intune"
+ms.prod: "intune"
 doc_type: apiPageType
 ---
 
@@ -22,7 +22,7 @@ One of the following permissions is required to call this API. To learn more, in
 |:---|:---|
 |Delegated (work or school account)|DeviceManagementApps.ReadWrite.All, DeviceManagementApps.Read.All|
 |Delegated (personal Microsoft account)|Not supported.|
-|Application|Not supported.|
+|Application|DeviceManagementApps.ReadWrite.All, DeviceManagementApps.Read.All|
 
 ## HTTP Request
 <!-- {
@@ -61,7 +61,7 @@ Here is an example of the response. Note: The response object shown here may be 
 ``` http
 HTTP/1.1 200 OK
 Content-Type: application/json
-Content-Length: 1967
+Content-Length: 2143
 
 {
   "value": {
@@ -100,13 +100,16 @@ Content-Length: 1967
     "minimumWarningOsVersion": "Minimum Warning Os Version value",
     "minimumRequiredAppVersion": "Minimum Required App Version value",
     "minimumWarningAppVersion": "Minimum Warning App Version value",
+    "managedBrowser": "microsoftEdge",
     "isAssigned": true,
     "screenCaptureBlocked": true,
     "disableAppEncryptionIfDeviceEncryptionIsEnabled": true,
     "encryptAppData": true,
     "deployedAppCount": 0,
     "minimumRequiredPatchVersion": "Minimum Required Patch Version value",
-    "minimumWarningPatchVersion": "Minimum Warning Patch Version value"
+    "minimumWarningPatchVersion": "Minimum Warning Patch Version value",
+    "customBrowserPackageId": "Custom Browser Package Id value",
+    "customBrowserDisplayName": "Custom Browser Display Name value"
   }
 }
 ```

@@ -19,18 +19,18 @@ Represents a type of shift request to take [timeoff](../resources/timeoff.md).
 
 | Method       | Return Type | Description |
 |:-------------|:------------|:------------|
+| [List](../api/timeoffrequest-list.md) | [timeOffRequest](timeoffrequest.md) collection | Get the list of **timeOffRequest** objects in this schedule.|
 | [Get](../api/timeoffrequest-get.md) | [timeOffRequest](timeoffrequest.md) | Read the properties and relationships of a **timeOffRequest** object. |
-| [Update](../api/timeoffrequest-update.md) | [timeOffRequest](timeoffrequest.md) | Update a **timeOffRequest** object. |
 | [Delete](../api/timeoffrequest-delete.md) | None | Delete a **timeOffRequest** object. |
-|[Approve](../api/timeoffrequest-approve.md)|None|Approve a time off request.|
-|[Decline](../api/timeoffrequest-decline.md)|None|Decline a time off request.|
+| [Approve](../api/timeoffrequest-approve.md)|None|Approve a time off request.|
+| [Decline](../api/timeoffrequest-decline.md)|None|Decline a time off request.|
 
 ## Properties
 
 | Property     | Type        | Description |
 |:-------------|:------------|:------------|
-|endDateTime|DateTimeOffset|The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`|
-|startDateTime|DateTimeOffset|The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`|
+|endDateTime|DateTimeOffset|The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is `2014-01-01T00:00:00Z`|
+|startDateTime|DateTimeOffset|The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is `2014-01-01T00:00:00Z`|
 |timeOffReasonId|String|The reason for the time off.|
 
 ## Relationships
@@ -46,8 +46,7 @@ The following is a JSON representation of the resource.
   "optionalProperties": [
 
   ],
-  "@odata.type": "microsoft.graph.timeOffRequest",
-  "baseType": ""
+  "@odata.type": "microsoft.graph.timeOffRequest"
 }-->
 
 ```json
@@ -67,3 +66,5 @@ The following is a JSON representation of the resource.
   "section": "documentation",
   "tocPath": ""
 }-->
+
+

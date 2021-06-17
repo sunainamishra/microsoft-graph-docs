@@ -3,7 +3,7 @@ title: "androidForWorkCustomConfiguration resource type"
 description: "Android For Work custom configuration"
 author: "dougeby"
 localization_priority: Normal
-ms.prod: "Intune"
+ms.prod: "intune"
 doc_type: resourcePageType
 ---
 
@@ -100,16 +100,17 @@ Here is a JSON representation of the resource.
   "version": 1024,
   "omaSettings": [
     {
-      "@odata.type": "microsoft.graph.omaSettingInteger",
+      "@odata.type": "microsoft.graph.omaSetting",
       "displayName": "String",
       "description": "String",
       "omaUri": "String",
-      "value": 1024,
-      "isReadOnly": true
+      "secretReferenceValueId": "String",
+      "isEncrypted": true
     }
   ]
 }
 ```
+
 
 
 

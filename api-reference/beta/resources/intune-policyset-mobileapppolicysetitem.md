@@ -3,7 +3,7 @@ title: "mobileAppPolicySetItem resource type"
 description: "A class containing the properties used for mobile app PolicySetItem."
 author: "dougeby"
 localization_priority: Normal
-ms.prod: "Intune"
+ms.prod: "intune"
 doc_type: resourcePageType
 ---
 
@@ -71,10 +71,14 @@ Here is a JSON representation of the resource.
   ],
   "intent": "String",
   "settings": {
-    "@odata.type": "microsoft.graph.mobileAppAssignmentSettings"
+    "@odata.type": "microsoft.graph.iosLobAppAssignmentSettings",
+    "vpnConfigurationId": "String",
+    "uninstallOnDeviceRemoval": true,
+    "isRemovable": true
   }
 }
 ```
+
 
 
 

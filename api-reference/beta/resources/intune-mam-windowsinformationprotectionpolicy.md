@@ -3,7 +3,7 @@ title: "windowsInformationProtectionPolicy resource type"
 description: "Policy for Windows information protection without MDM"
 author: "dougeby"
 localization_priority: Normal
-ms.prod: "Intune"
+ms.prod: "intune"
 doc_type: resourcePageType
 ---
 
@@ -172,9 +172,7 @@ Here is a JSON representation of the resource.
       "displayName": "String",
       "ranges": [
         {
-          "@odata.type": "microsoft.graph.iPv6Range",
-          "lowerAddress": "String",
-          "upperAddress": "String"
+          "@odata.type": "microsoft.graph.ipRange"
         }
       ]
     }
@@ -233,6 +231,7 @@ Here is a JSON representation of the resource.
   "daysWithoutContactBeforeUnenroll": 1024
 }
 ```
+
 
 
 

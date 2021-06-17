@@ -3,7 +3,7 @@ title: "deviceHealthScriptRemediationHistoryData resource type"
 description: "The number of devices remediated by a device health script on a given date."
 author: "dougeby"
 localization_priority: Normal
-ms.prod: "Intune"
+ms.prod: "intune"
 doc_type: resourcePageType
 ---
 
@@ -37,11 +37,12 @@ Here is a JSON representation of the resource.
 ``` json
 {
   "@odata.type": "#microsoft.graph.deviceHealthScriptRemediationHistoryData",
-  "date": "<Unknown Primitive Type Edm.Date>",
+  "date": "String (Date)",
   "remediatedDeviceCount": 1024,
   "noIssueDeviceCount": 1024
 }
 ```
+
 
 
 

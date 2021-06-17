@@ -3,7 +3,7 @@ title: "managedAppPolicyDeploymentSummaryPerApp resource type"
 description: "Represents policy deployment summary per app."
 author: "dougeby"
 localization_priority: Normal
-ms.prod: "Intune"
+ms.prod: "intune"
 doc_type: resourcePageType
 ---
 
@@ -37,11 +37,13 @@ Here is a JSON representation of the resource.
 {
   "@odata.type": "#microsoft.graph.managedAppPolicyDeploymentSummaryPerApp",
   "mobileAppIdentifier": {
-    "@odata.type": "microsoft.graph.mobileAppIdentifier"
+    "@odata.type": "microsoft.graph.windowsAppIdentifier",
+    "windowsAppId": "String"
   },
   "configurationAppliedUserCount": 1024
 }
 ```
+
 
 
 

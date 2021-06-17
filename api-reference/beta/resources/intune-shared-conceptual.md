@@ -2,7 +2,7 @@
 title: "Shared resources in Microsoft Intune - Microsoft Graph API"
 description: "Lists the Microsoft Graph API for Intune endpoints (REST) that support multiple workflows for a tenant organization."
 localization_priority: Normal
-author: "rolyon"
+author: "dougeby"
 ms.prod: "intune"
 ---
 
@@ -21,10 +21,17 @@ The following Graph resources are shared between Intune workflows:
 - [Action state](intune-shared-actionstate.md)
 - [All devices assignment target](intune-shared-alldevicesassignmenttarget.md)
 - [All licensed users assignment target](intune-shared-alllicensedusersassignmenttarget.md)
+- [Android enterprise always on VPN package type](intune-shared-androidenterprisealwaysonvpnpackagetype.md)
 - [Android managed app protection](intune-shared-androidmanagedappprotection.md)
+- [Android managed store app assignment settings](intune-shared-androidmanagedstoreappassignmentsettings.md)
+- [Certificate destination store](intune-shared-certificatedestinationstore.md)
+- [Certificate store](intune-shared-certificatestore.md)
+- [Certificate validity period scale](intune-shared-certificatevalidityperiodscale.md)
 - [Company portal action](intune-shared-companyportalaction.md)
 - [Company portal blocked action](intune-shared-companyportalblockedaction.md)
 - [Compliance status](intune-shared-compliancestatus.md)
+- [Configuration manager collection assignment target](intune-shared-configurationmanagercollectionassignmenttarget.md)
+- [Device and app management assignment filter type](intune-shared-deviceandappmanagementassignmentfiltertype.md)
 - [Device and app management assignment source](intune-shared-deviceandappmanagementassignmentsource.md)
 - [Device and app management assignment target](intune-shared-deviceandappmanagementassignmenttarget.md)
 - [Device app management](intune-shared-deviceappmanagement.md)
@@ -37,12 +44,13 @@ The following Graph resources are shared between Intune workflows:
 - [Device management derived credential settings](intune-shared-devicemanagementderivedcredentialsettings.md)
 - [Device management script](intune-shared-devicemanagementscript.md)
 - [Device platform type](intune-shared-deviceplatformtype.md)
-- [Device type](intune-shared-devicetype.md)
 - [Enablement](intune-shared-enablement.md)
 - [Enrollment availability options](intune-shared-enrollmentavailabilityoptions.md)
 - [Enrollment state](intune-shared-enrollmentstate.md)
 - [Exclusion group assignment target](intune-shared-exclusiongroupassignmenttarget.md)
+- [Extended key usage](intune-shared-extendedkeyusage.md)
 - [Group assignment target](intune-shared-groupassignmenttarget.md)
+- [Hash algorithms](intune-shared-hashalgorithms.md)
 - [Install intent](intune-shared-installintent.md)
 - [iOS LOB app assignment settings](intune-shared-ioslobappassignmentsettings.md)
 - [iOS LOB app provisioning configuration](intune-shared-ioslobappprovisioningconfiguration.md)
@@ -52,10 +60,13 @@ The following Graph resources are shared between Intune workflows:
 - [IP range](intune-shared-iprange.md)
 - [IPv4 range](intune-shared-ipv4range.md)
 - [IPv6 range](intune-shared-ipv6range.md)
+- [Key size](intune-shared-keysize.md)
+- [Key storage provider option](intune-shared-keystorageprovideroption.md)
+- [Key usages](intune-shared-keyusages.md)
 - [Key/value pair](intune-shared-keyvaluepair.md)
+- [macOS LOB app assignment settings](intune-shared-macoslobappassignmentsettings.md)
 - [macOS VPP app assignment settings](intune-shared-macosvppappassignmentsettings.md)
 - [Managed device owner type](intune-shared-manageddeviceownertype.md)
-- [Management agent type](intune-shared-managementagenttype.md)
 - [MDM windows information protection policy](intune-shared-mdmwindowsinformationprotectionpolicy.md)
 - [Microsoft store for business app assignment settings](intune-shared-microsoftstoreforbusinessappassignmentsettings.md)
 - [MIME content](intune-shared-mimecontent.md)
@@ -73,12 +84,15 @@ The following Graph resources are shared between Intune workflows:
 - [Run as account type](intune-shared-runasaccounttype.md)
 - [Run state](intune-shared-runstate.md)
 - [Saved UI state generation options](intune-shared-saveduistategenerationoptions.md)
+- [Setting source type](intune-shared-settingsourcetype.md)
+- [Subject alternative name type](intune-shared-subjectalternativenametype.md)
 - [Targeted managed app configuration](intune-shared-targetedmanagedappconfiguration.md)
 - [URI](intune-shared-uri.md)
 - [User](intune-shared-user.md)
 - [VPP token account type](intune-shared-vpptokenaccounttype.md)
 - [VPP token action failure reason](intune-shared-vpptokenactionfailurereason.md)
 - [Win32 LOB app assignment settings](intune-shared-win32lobappassignmentsettings.md)
+- [Win32 LOB app delivery optimization priority](intune-shared-win32lobappdeliveryoptimizationpriority.md)
 - [Win32 LOB app notification](intune-shared-win32lobappnotification.md)
 - [Win32 LOB app restart settings](intune-shared-win32lobapprestartsettings.md)
 - [Windows AppX app assignment settings](intune-shared-windowsappxappassignmentsettings.md)
@@ -86,4 +100,3 @@ The following Graph resources are shared between Intune workflows:
 - [Windows domain join configuration](intune-shared-windowsdomainjoinconfiguration.md)
 - [Windows universal AppX app assignment settings](intune-shared-windowsuniversalappxappassignmentsettings.md)
 - [Windows update state](intune-shared-windowsupdatestate.md)
-

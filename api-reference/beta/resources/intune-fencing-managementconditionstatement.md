@@ -3,7 +3,7 @@ title: "managementConditionStatement resource type"
 description: "A management condition statement is a group of management conditions that enable/disable device/application configurations when all contained management conditions are met."
 author: "dougeby"
 localization_priority: Normal
-ms.prod: "Intune"
+ms.prod: "intune"
 doc_type: resourcePageType
 ---
 
@@ -63,7 +63,8 @@ Here is a JSON representation of the resource.
   "createdDateTime": "String (timestamp)",
   "modifiedDateTime": "String (timestamp)",
   "expression": {
-    "@odata.type": "microsoft.graph.managementConditionExpression"
+    "@odata.type": "microsoft.graph.managementConditionExpressionString",
+    "value": "String"
   },
   "eTag": "String",
   "applicablePlatforms": [
@@ -71,6 +72,7 @@ Here is a JSON representation of the resource.
   ]
 }
 ```
+
 
 
 
